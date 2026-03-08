@@ -2,18 +2,6 @@
 
 A comprehensive MERN stack application for booking temple darshan slots online, managing temple operations, and providing analytics for administrators.
 
-## 📋 Table of Contents
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Project Structure](#project-structure)
-- [User Roles](#user-roles)
-- [API Documentation](#api-documentation)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## ✨ Features
 
