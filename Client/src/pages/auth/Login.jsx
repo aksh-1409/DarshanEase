@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { EnvelopeIcon, LockClosedIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../../context/AuthContext';
-import Input from '../../components/common/Input';
-import Button from '../../components/common/Button';
+import Input from '../../Components/common/Input';
+import Button from '../../Components/common/Button';
 
 const Login = () => {
   const navigate = useNavigate();

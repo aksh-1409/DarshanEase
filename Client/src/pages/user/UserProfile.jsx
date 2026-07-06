@@ -8,10 +8,10 @@ import {
   MapPinIcon,
   KeyIcon
 } from '@heroicons/react/24/outline';
-import UserLayout from '../../components/layout/UserLayout';
-import Card from '../../components/common/Card';
-import Input from '../../components/common/Input';
-import Button from '../../components/common/Button';
+import UserLayout from '../../Components/layout/UserLayout';
+import Card from '../../Components/common/Card';
+import Input from '../../Components/common/Input';
+import Button from '../../Components/common/Button';
 import { userService } from '../../services/userService';
 import { useAuth } from '../../context/AuthContext';
 

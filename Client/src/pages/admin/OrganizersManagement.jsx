@@ -8,11 +8,11 @@ import {
   TrashIcon,
   MagnifyingGlassIcon
 } from '@heroicons/react/24/outline';
-import AdminLayout from '../../components/layout/AdminLayout';
-import Card from '../../components/common/Card';
-import Button from '../../components/common/Button';
-import Modal from '../../components/common/Modal';
-import Input from '../../components/common/Input';
+import AdminLayout from '../../Components/layout/AdminLayout';
+import Card from '../../Components/common/Card';
+import Button from '../../Components/common/Button';
+import Modal from '../../Components/common/Modal';
+import Input from '../../Components/common/Input';
 import { adminService } from '../../services/adminService';
 
 const OrganizersManagement = () => {

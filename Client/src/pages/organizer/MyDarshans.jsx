@@ -10,11 +10,11 @@ import {
   PlusIcon,
   TrashIcon
 } from '@heroicons/react/24/outline';
-import OrganizerLayout from '../../components/layout/OrganizerLayout';
-import Card from '../../components/common/Card';
-import Button from '../../components/common/Button';
-import Modal from '../../components/common/Modal';
-import Input from '../../components/common/Input';
+import OrganizerLayout from '../../Components/layout/OrganizerLayout';
+import Card from '../../Components/common/Card';
+import Button from '../../Components/common/Button';
+import Modal from '../../Components/common/Modal';
+import Input from '../../Components/common/Input';
 import { organizerService } from '../../services/organizerService';
 
 const MyDarshans = () => {

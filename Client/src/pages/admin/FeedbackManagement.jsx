@@ -9,9 +9,9 @@ import {
   StarIcon
 } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
-import AdminLayout from '../../components/layout/AdminLayout';
-import Card from '../../components/common/Card';
-import Button from '../../components/common/Button';
+import AdminLayout from '../../Components/layout/AdminLayout';
+import Card from '../../Components/common/Card';
+import Button from '../../Components/common/Button';
 import { adminService } from '../../services/adminService';
 
 const FeedbackManagement = () => {

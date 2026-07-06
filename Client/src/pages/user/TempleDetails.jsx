@@ -10,8 +10,8 @@ import {
   CurrencyRupeeIcon,
   StarIcon
 } from '@heroicons/react/24/outline';
-import Card from '../../components/common/Card';
-import Button from '../../components/common/Button';
+import Card from '../../Components/common/Card';
+import Button from '../../Components/common/Button';
 import { userService } from '../../services/userService';
 
 const TempleDetails = () => {

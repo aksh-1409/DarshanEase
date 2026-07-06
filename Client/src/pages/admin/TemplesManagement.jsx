@@ -8,9 +8,9 @@ import {
   MapPinIcon,
   ClockIcon
 } from '@heroicons/react/24/outline';
-import AdminLayout from '../../components/layout/AdminLayout';
-import Card from '../../components/common/Card';
-import Modal from '../../components/common/Modal';
+import AdminLayout from '../../Components/layout/AdminLayout';
+import Card from '../../Components/common/Card';
+import Modal from '../../Components/common/Modal';
 import { adminService } from '../../services/adminService';
 
 const TemplesManagement = () => {

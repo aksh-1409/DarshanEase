@@ -42,7 +42,7 @@ import AnalyticsManagement from './pages/admin/AnalyticsManagement';
 import UserProfile from './pages/user/UserProfile';
 
 // Protected Route Component
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
   return (

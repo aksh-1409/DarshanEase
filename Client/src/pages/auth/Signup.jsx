@@ -11,8 +11,8 @@ import {
   SparklesIcon 
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../../context/AuthContext';
-import Input from '../../components/common/Input';
-import Button from '../../components/common/Button';
+import Input from '../../Components/common/Input';
+import Button from '../../Components/common/Button';
 
 const Signup = () => {
   const navigate = useNavigate();

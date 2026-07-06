@@ -9,8 +9,8 @@ import {
   CalendarIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
-import UserLayout from '../../components/layout/UserLayout';
-import Card from '../../components/common/Card';
+import UserLayout from '../../Components/layout/UserLayout';
+import Card from '../../Components/common/Card';
 import { userService } from '../../services/userService';
 import { useAuth } from '../../context/AuthContext';
 

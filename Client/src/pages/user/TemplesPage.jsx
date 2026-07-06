@@ -9,7 +9,7 @@ import {
   MagnifyingGlassIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline';
-import Card from '../../components/common/Card';
+import Card from '../../Components/common/Card';
 import { userService } from '../../services/userService';
 
 const TemplesPage = () => {

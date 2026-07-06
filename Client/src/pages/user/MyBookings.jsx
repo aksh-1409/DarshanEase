@@ -9,10 +9,10 @@ import {
   XMarkIcon,
   QrCodeIcon
 } from '@heroicons/react/24/outline';
-import UserLayout from '../../components/layout/UserLayout';
-import Card from '../../components/common/Card';
-import Button from '../../components/common/Button';
-import Modal from '../../components/common/Modal';
+import UserLayout from '../../Components/layout/UserLayout';
+import Card from '../../Components/common/Card';
+import Button from '../../Components/common/Button';
+import Modal from '../../Components/common/Modal';
 import { userService } from '../../services/userService';
 import { useAuth } from '../../context/AuthContext';
 

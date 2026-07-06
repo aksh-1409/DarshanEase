@@ -8,8 +8,8 @@ import {
   UserIcon,
   BuildingLibraryIcon
 } from '@heroicons/react/24/outline';
-import AdminLayout from '../../components/layout/AdminLayout';
-import Card from '../../components/common/Card';
+import AdminLayout from '../../Components/layout/AdminLayout';
+import Card from '../../Components/common/Card';
 import { adminService } from '../../services/adminService';
 
 const BookingsManagement = () => {

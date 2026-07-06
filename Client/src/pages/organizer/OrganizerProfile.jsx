@@ -9,10 +9,10 @@ import {
   KeyIcon,
   BuildingOfficeIcon
 } from '@heroicons/react/24/outline';
-import OrganizerLayout from '../../components/layout/OrganizerLayout';
-import Card from '../../components/common/Card';
-import Input from '../../components/common/Input';
-import Button from '../../components/common/Button';
+import OrganizerLayout from '../../Components/layout/OrganizerLayout';
+import Card from '../../Components/common/Card';
+import Input from '../../Components/common/Input';
+import Button from '../../Components/common/Button';
 import { organizerService } from '../../services/organizerService';
 import { useAuth } from '../../context/AuthContext';
 
