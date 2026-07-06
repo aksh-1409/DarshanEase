@@ -182,6 +182,19 @@ const Signup = () => {
               </div>
             )}
 
+            {role === 'admin' && (
+              <Input
+                label="Admin Secret Code"
+                type="password"
+                name="adminSecret"
+                value={formData.adminSecret || ''}
+                onChange={handleChange}
+                placeholder="Enter the master admin secret code"
+                icon={LockClosedIcon}
+                required
+              />
+            )}
+
             <Button
               type="submit"
               variant="primary"

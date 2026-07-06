@@ -52,8 +52,25 @@ exports.alogin = async (req, res, next) => {
 
 // Admin Signup
 exports.asignup = async (req, res, next) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, adminSecret } = req.body;
     try {
+        // Only allow registration if no admin exists yet
+        const adminExists = await Admin.findOne();
+        if (adminExists) {
+            return res.status(403).json({
+                success: false,
+                message: "Registration closed: An Admin account already exists"
+            });
+        }
+
+        // Enforce admin signup secret if configured
+        if (process.env.ADMIN_SIGNUP_SECRET && adminSecret !== process.env.ADMIN_SIGNUP_SECRET) {
+            return res.status(403).json({
+                success: false,
+                message: "Unauthorized: Invalid Admin Signup Secret Code"
+            });
+        }
+
         const existing = await Admin.findOne({ email });
         if (existing) {
             return res.status(400).json({
