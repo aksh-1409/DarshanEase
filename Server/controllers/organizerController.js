@@ -151,7 +151,7 @@ exports.updateOrganizerProfile = async (req, res, next) => {
 exports.createTemple = async (req, res, next) => {
     try {
         const { templeName, location, description, darshanStartTime, darshanEndTime, facilities } = req.body;
-        const templeImage = req.file?.path;
+        const templeImage = req.file?.secure_url || req.file?.path;
 
         if (!templeImage) {
             return res.status(400).json({
@@ -263,7 +263,7 @@ exports.updateTemple = async (req, res, next) => {
         }
 
         if (req.file) {
-            updateData.templeImage = req.file.path;
+            updateData.templeImage = req.file.secure_url || req.file.path;
         }
 
         const updatedTemple = await Temple.findByIdAndUpdate(
@@ -516,7 +516,7 @@ exports.updateBookingStatus = async (req, res, next) => {
 exports.createEvent = async (req, res, next) => {
     try {
         const { templeId, eventName, description, eventDate, startTime, endTime } = req.body;
-        const eventImage = req.file?.path;
+        const eventImage = req.file?.secure_url || req.file?.path;
 
         const temple = await Temple.findById(templeId);
         
@@ -601,7 +601,7 @@ exports.updateEvent = async (req, res, next) => {
 
         const updateData = { ...req.body };
         if (req.file) {
-            updateData.eventImage = req.file.path;
+            updateData.eventImage = req.file.secure_url || req.file.path;
         }
 
         const updatedEvent = await Event.findByIdAndUpdate(

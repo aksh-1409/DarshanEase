@@ -27,8 +27,7 @@ app.use(cors({
   credentials: true
 }));
 
-// Static files for uploads
-app.use('/uploads', express.static('uploads'));
+// Note: Static file serving removed — images are hosted on Cloudinary
 
 // API Routes
 app.use('/api/user', userRoutes);
