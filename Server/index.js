@@ -34,6 +34,40 @@ app.use('/api/user', userRoutes);
 app.use('/api/organizer', organizerRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Temporary Admin Seeding Route (To be deleted after running)
+app.get('/api/seed-admin', async (req, res) => {
+  try {
+    const Admin = require('./models/Admin');
+    const bcrypt = require('bcryptjs');
+    
+    // Delete all existing admins
+    const deleteResult = await Admin.deleteMany({});
+    
+    // Create one master admin
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash("AdminPassword123!", salt);
+    
+    const masterAdmin = await Admin.create({
+      name: "Master Admin",
+      email: "admin@darshanease.com",
+      password: hashedPassword,
+      role: "admin"
+    });
+    
+    res.json({
+      success: true,
+      message: `Deleted ${deleteResult.deletedCount} old admins. Created master admin successfully!`,
+      email: masterAdmin.email,
+      password: "AdminPassword123!"
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+  }
+});
+
 // Health check route
 app.get('/api/health', (req, res) => {
   res.json({
