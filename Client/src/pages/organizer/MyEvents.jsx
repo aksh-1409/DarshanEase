@@ -148,7 +148,7 @@ const MyEvents = () => {
                 <Card className="overflow-hidden hover:shadow-xl transition-shadow">
                   {event.eventImage && (
                     <img
-                      src={`http://localhost:8000/${event.eventImage}`}
+                      src={event.eventImage}
                       alt={event.eventName}
                       className="w-full h-48 object-cover"
                     />

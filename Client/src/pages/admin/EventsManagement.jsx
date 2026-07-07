@@ -170,7 +170,7 @@ const EventsManagement = () => {
                 <Card className="overflow-hidden hover:shadow-xl transition-shadow">
                   {event.eventImage && (
                     <img
-                      src={`http://localhost:8000/${event.eventImage}`}
+                      src={event.eventImage}
                       alt={event.eventName}
                       className="w-full h-48 object-cover"
                     />
@@ -239,7 +239,7 @@ const EventsManagement = () => {
           <div className="space-y-4">
             {selectedEvent.eventImage && (
               <img
-                src={`http://localhost:8000/${selectedEvent.eventImage}`}
+                src={selectedEvent.eventImage}
                 alt={selectedEvent.eventName}
                 className="w-full h-64 object-cover rounded-lg"
               />

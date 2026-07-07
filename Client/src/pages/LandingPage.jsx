@@ -36,10 +36,10 @@ const LandingPage = () => {
   ];
 
   const temples = [
-    { image: '/temple1.jpg', name: 'Book Darshan', subtitle: 'Reserve Your Slot' },
-    { image: '/temple2.jpg', name: 'Virtual Queue', subtitle: 'Skip The Wait' },
-    { image: '/temple3.jpg', name: 'Make Donations', subtitle: 'Contribute Online' },
-    { image: '/temple4.jpg', name: 'Plan Visits', subtitle: 'Schedule Easily' },
+    { image: 'https://res.cloudinary.com/obpfeoqo/image/upload/v1783441275/darshanease/landing/hveofpzwqogeqpwulpaa.jpg', name: 'Book Darshan', subtitle: 'Reserve Your Slot' },
+    { image: 'https://res.cloudinary.com/obpfeoqo/image/upload/v1783441278/darshanease/landing/oibrwih6ocxlke5cpj6r.jpg', name: 'Virtual Queue', subtitle: 'Skip The Wait' },
+    { image: 'https://res.cloudinary.com/obpfeoqo/image/upload/v1783441280/darshanease/landing/nb6xi82zuhs3b0neebzc.jpg', name: 'Make Donations', subtitle: 'Contribute Online' },
+    { image: 'https://res.cloudinary.com/obpfeoqo/image/upload/v1783441281/darshanease/landing/vfnwddjbumd5r9lcfwpp.jpg', name: 'Plan Visits', subtitle: 'Schedule Easily' },
   ];
 
   const benefits = [
@@ -274,12 +274,12 @@ const LandingPage = () => {
             >
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/temple1.jpg"
+                  src="https://res.cloudinary.com/obpfeoqo/image/upload/v1783441275/darshanease/landing/hveofpzwqogeqpwulpaa.jpg"
                   alt="Temple"
                   className="rounded-2xl shadow-xl w-full h-64 object-cover"
                 />
                 <img
-                  src="/temple2.jpg"
+                  src="https://res.cloudinary.com/obpfeoqo/image/upload/v1783441278/darshanease/landing/oibrwih6ocxlke5cpj6r.jpg"
                   alt="Temple"
                   className="rounded-2xl shadow-xl w-full h-64 object-cover mt-8"
                 />

@@ -72,7 +72,7 @@ const TempleDetails = () => {
       {/* Hero Section */}
       <div className="relative h-96">
         <img
-          src={`http://localhost:8000/${temple.templeImage}`}
+          src={temple.templeImage}
           alt={temple.templeName}
           className="w-full h-full object-cover"
           onError={(e) => {

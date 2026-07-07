@@ -111,7 +111,7 @@ const TemplesPage = () => {
                   <Card hover className="overflow-hidden p-0">
                     <div className="relative h-48">
                       <img
-                        src={`http://localhost:8000/${temple.templeImage}`}
+                        src={temple.templeImage}
                         alt={temple.templeName}
                         className="w-full h-full object-cover"
                         onError={(e) => {

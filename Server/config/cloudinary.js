@@ -9,16 +9,34 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-// Cloudinary storage engine for Multer
-const storage = new CloudinaryStorage({
+// Temple image storage — organized in darshanease/temples/
+const templeStorage = new CloudinaryStorage({
     cloudinary,
     params: {
-        folder: 'darshanease',
+        folder: 'darshanease/temples',
         allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
-        transformation: [{ width: 1200, crop: 'limit' }]
+        transformation: [
+            { width: 1200, crop: 'limit', quality: 'auto', fetch_format: 'auto' }
+        ]
     }
 });
 
-const upload = multer({ storage });
+// Event image storage — organized in darshanease/events/
+const eventStorage = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: 'darshanease/events',
+        allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
+        transformation: [
+            { width: 1200, crop: 'limit', quality: 'auto', fetch_format: 'auto' }
+        ]
+    }
+});
 
-module.exports = { cloudinary, upload };
+const uploadTemple = multer({ storage: templeStorage });
+const uploadEvent = multer({ storage: eventStorage });
+
+// Keep a generic 'upload' export for backward compatibility
+const upload = multer({ storage: templeStorage });
+
+module.exports = { cloudinary, upload, uploadTemple, uploadEvent };

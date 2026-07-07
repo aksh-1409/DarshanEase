@@ -3,7 +3,7 @@ const router = express.Router();
 const organizerController = require('../controllers/organizerController');
 const { protect, authorize } = require('../middleware/auth');
 const { userValidation, templeValidation, darshanValidation } = require('../utils/validators');
-const { upload } = require('../config/cloudinary');
+const { uploadTemple, uploadEvent } = require('../config/cloudinary');
 
 // ============ PUBLIC ROUTES ============
 // Authentication
@@ -22,9 +22,9 @@ router.get('/profile', protect, authorize('organizer'), organizerController.getO
 router.put('/profile', protect, authorize('organizer'), organizerController.updateOrganizerProfile);
 
 // Temple Management
-router.post('/temple', protect, authorize('organizer'), upload.single('templeImage'), templeValidation.create, organizerController.createTemple);
+router.post('/temple', protect, authorize('organizer'), uploadTemple.single('templeImage'), templeValidation.create, organizerController.createTemple);
 router.get('/my-temples', protect, authorize('organizer'), organizerController.getTemplesByOrganizer);
-router.put('/temple/:id', protect, authorize('organizer'), upload.single('templeImage'), organizerController.updateTemple);
+router.put('/temple/:id', protect, authorize('organizer'), uploadTemple.single('templeImage'), organizerController.updateTemple);
 router.delete('/temple/:id', protect, authorize('organizer'), organizerController.deleteTemple);
 
 // Darshan Management
@@ -38,9 +38,9 @@ router.get('/bookings', protect, authorize('organizer'), organizerController.get
 router.put('/booking/:id/status', protect, authorize('organizer'), organizerController.updateBookingStatus);
 
 // Event Management
-router.post('/event', protect, authorize('organizer'), upload.single('eventImage'), organizerController.createEvent);
+router.post('/event', protect, authorize('organizer'), uploadEvent.single('eventImage'), organizerController.createEvent);
 router.get('/my-events', protect, authorize('organizer'), organizerController.getEventsByOrganizer);
-router.put('/event/:id', protect, authorize('organizer'), upload.single('eventImage'), organizerController.updateEvent);
+router.put('/event/:id', protect, authorize('organizer'), uploadEvent.single('eventImage'), organizerController.updateEvent);
 router.delete('/event/:id', protect, authorize('organizer'), organizerController.deleteEvent);
 
 // Analytics

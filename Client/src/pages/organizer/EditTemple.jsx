@@ -56,7 +56,7 @@ const EditTemple = () => {
       });
 
       if (temple.templeImage) {
-        setImagePreview(`http://localhost:8000/${temple.templeImage}`);
+        setImagePreview(temple.templeImage);
       }
     } catch (error) {
       toast.error('Failed to load temple');

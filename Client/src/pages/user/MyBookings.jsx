@@ -101,7 +101,7 @@ const MyBookings = () => {
                     {/* Temple Image */}
                     <div className="w-full md:w-48 h-32 rounded-lg overflow-hidden flex-shrink-0">
                       <img
-                        src={`http://localhost:8000/${booking.templeImage}`}
+                        src={booking.templeImage}
                         alt={booking.templeName}
                         className="w-full h-full object-cover"
                         onError={(e) => {

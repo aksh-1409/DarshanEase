@@ -128,7 +128,7 @@ const TemplesManagement = () => {
                 <Card className="overflow-hidden hover:shadow-xl transition-shadow">
                   {temple.templeImage && (
                     <img
-                      src={`http://localhost:8000/${temple.templeImage}`}
+                      src={temple.templeImage}
                       alt={temple.templeName}
                       className="w-full h-48 object-cover"
                     />
@@ -186,7 +186,7 @@ const TemplesManagement = () => {
           <div className="space-y-4">
             {selectedTemple.templeImage && (
               <img
-                src={`http://localhost:8000/${selectedTemple.templeImage}`}
+                src={selectedTemple.templeImage}
                 alt={selectedTemple.templeName}
                 className="w-full h-64 object-cover rounded-lg"
               />

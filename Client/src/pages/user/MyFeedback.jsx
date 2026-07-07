@@ -143,7 +143,7 @@ const MyFeedback = () => {
                       {/* Temple Image */}
                       <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
                         <img
-                          src={`http://localhost:8000/${booking.templeImage}`}
+                          src={booking.templeImage}
                           alt={booking.templeName}
                           className="w-full h-full object-cover"
                           onError={(e) => {
