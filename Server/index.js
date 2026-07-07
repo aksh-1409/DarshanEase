@@ -34,6 +34,62 @@ app.use('/api/user', userRoutes);
 app.use('/api/organizer', organizerRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Temporary seed endpoint for Atlas DB
+const { seedDatabase } = require('./scripts/seedProduction');
+app.get('/api/seed', seedDatabase);
+
+// Temporary HTTP migration endpoint
+app.post('/api/migrate-data', async (req, res) => {
+  const { collectionName, documents } = req.body;
+  try {
+    if (!collectionName || !Array.isArray(documents)) {
+      return res.status(400).json({ success: false, message: 'Invalid payload' });
+    }
+    const mongoose = require('mongoose');
+    const db = mongoose.connection.db;
+    
+    // Clear the existing collection
+    await db.collection(collectionName).deleteMany({});
+    
+    // Convert string IDs, ObjectIds, and date fields back to MongoDB types
+    const preparedDocs = documents.map(doc => {
+      const newDoc = { ...doc };
+      
+      if (newDoc._id) {
+        newDoc._id = new mongoose.Types.ObjectId(newDoc._id);
+      }
+      
+      const refFields = ['organizerId', 'userId', 'templeId', 'darshanId'];
+      refFields.forEach(field => {
+        if (newDoc[field] && typeof newDoc[field] === 'string' && newDoc[field].length === 24) {
+          newDoc[field] = new mongoose.Types.ObjectId(newDoc[field]);
+        }
+      });
+      
+      const dateFields = ['createdAt', 'updatedAt', 'date', 'darshanDate', 'eventDate'];
+      dateFields.forEach(field => {
+        if (newDoc[field] && typeof newDoc[field] === 'string') {
+          const parsedDate = Date.parse(newDoc[field]);
+          if (!isNaN(parsedDate)) {
+            newDoc[field] = new Date(parsedDate);
+          }
+        }
+      });
+
+      return newDoc;
+    });
+
+    if (preparedDocs.length > 0) {
+      await db.collection(collectionName).insertMany(preparedDocs);
+    }
+
+    res.json({ success: true, count: preparedDocs.length });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+
 // Health check route
 app.get('/api/health', (req, res) => {
   res.json({
